@@ -10,7 +10,7 @@
 			text-align: right;
 			font-size: 50px;
 		}
-		#year {
+		#semana {
 			background: red;
 		}
 		#dia {
@@ -32,8 +32,8 @@
 	</style>
 </head>
 <body>
-<p>AÑO</p>
-<div id="year"></div>
+<p>SEMANA</p>
+<div id="semana"></div>
 <p>DIA</p>
 <div id="dia"></div>
 <p>HORA</p>
@@ -47,10 +47,10 @@ function milisegundos() {
 	const d = new Date();
 	ms = d.getTime();
 	
-	ms_year = ms % 31536000000;
-	porcentajeyear = ms_year / 315360000;
-    document.getElementById("year").style.width = porcentajeyear + "%";
-	document.getElementById("year").innerHTML = Math.floor(ms_year / 100);    
+	ms_semana = ms % 604800000;
+	porcentajesemana = ms_semana / 6048000;
+    document.getElementById("semana").style.width = porcentajesemana + "%";
+	document.getElementById("semana").innerHTML = Math.floor(ms_semana / 100);    
 	
 	ms_dia = ms % 86400000;
 	porcentajedia = ms_dia / 864000;
