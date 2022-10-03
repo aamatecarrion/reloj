@@ -22,10 +22,10 @@
 		#minuto {
 			background: yellow;
 		}
-		#segundo {
+		/*#segundo {
 			background: cyan;
 			/*text-align: left;*/
-		}
+		}*/
 		body {
 			margin: 0px;
 		}
@@ -40,8 +40,8 @@
 <div id="hora"></div>
 <p>MINUTO</p>
 <div id="minuto"></div>
-<p>SEGUNDO</p>
-<div id="segundo"></div>
+<!--<p>SEGUNDO</p>
+<div id="segundo"></div>-->
 <script>
 function milisegundos() {
 	const d = new Date();
@@ -67,10 +67,10 @@ function milisegundos() {
     document.getElementById("minuto").style.width = porcentajeminuto + "%";
 	document.getElementById("minuto").innerHTML = Math.floor(ms_minuto / 100);
     
-    ms_segundo = ms % 1000;
-	porcentajesegundo = ms_segundo / 10;
-    document.getElementById("segundo").style.width = porcentajesegundo + "%";
-	document.getElementById("segundo").innerHTML = Math.floor(ms_segundo / 100);
+    //ms_segundo = ms % 1000;
+	//porcentajesegundo = ms_segundo / 10;
+    //document.getElementById("segundo").style.width = porcentajesegundo + "%";
+	//document.getElementById("segundo").innerHTML = Math.floor(ms_segundo / 100);
 }
 setInterval(milisegundos,10);
 
