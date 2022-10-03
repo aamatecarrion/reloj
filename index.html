@@ -43,12 +43,12 @@ function milisegundos() {
 	const d = new Date();
 	ms = d.getTime();
 	
-	ms_semana = (ms + 259200000) % 604800000;
+	ms_semana = (ms + 259200000 + 7200000) % 604800000;
 	porcentajesemana = ms_semana / 6048000;
     document.getElementById("semana").style.width = porcentajesemana + "%";
 	document.getElementById("semana").innerHTML = Math.floor(ms_semana / 100);    
 	
-	ms_dia = ms % 86400000;
+	ms_dia = (ms + 7200000) % 86400000;
 	porcentajedia = ms_dia / 864000;
     document.getElementById("dia").style.width = porcentajedia + "%";
 	document.getElementById("dia").innerHTML = Math.floor(ms_dia / 100);
