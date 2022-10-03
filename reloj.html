@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reloj</title>
+	<style type="text/css">
+		div {
+			height: 60px;
+			text-align: right;
+			font-size: 50px;
+		}
+		#year {
+			background: red;
+		}
+		#dia {
+			background: green;
+		}
+		#hora {
+			background: blue;
+		}
+		#minuto {
+			background: yellow;
+		}
+		#segundo {
+			background: cyan;
+			/*text-align: left;*/
+		}
+		body {
+			margin: 0px;
+		}
+	</style>
+</head>
+<body>
+<p>AÑO</p>
+<div id="year"></div>
+<p>DIA</p>
+<div id="dia"></div>
+<p>HORA</p>
+<div id="hora"></div>
+<p>MINUTO</p>
+<div id="minuto"></div>
+<p>SEGUNDO</p>
+<div id="segundo"></div>
+<script>
+function milisegundos() {
+	const d = new Date();
+	ms = d.getTime();
+	
+	ms_year = ms % 31536000000;
+	porcentajeyear = ms_year / 315360000;
+    document.getElementById("year").style.width = porcentajeyear + "%";
+	document.getElementById("year").innerHTML = Math.floor(ms_year / 100);    
+	
+	ms_dia = ms % 86400000;
+	porcentajedia = ms_dia / 864000;
+    document.getElementById("dia").style.width = porcentajedia + "%";
+	document.getElementById("dia").innerHTML = Math.floor(ms_dia / 100);
+    
+    ms_hora = ms % 3600000;
+	porcentajehora = ms_hora / 36000;
+    document.getElementById("hora").style.width = porcentajehora + "%";
+	document.getElementById("hora").innerHTML = Math.floor(ms_hora / 100);    
+	
+	ms_minuto = ms % 60000;
+	porcentajeminuto = ms_minuto / 600;
+    document.getElementById("minuto").style.width = porcentajeminuto + "%";
+	document.getElementById("minuto").innerHTML = Math.floor(ms_minuto / 100);
+    
+    ms_segundo = ms % 1000;
+	porcentajesegundo = ms_segundo / 10;
+    document.getElementById("segundo").style.width = porcentajesegundo + "%";
+	document.getElementById("segundo").innerHTML = Math.floor(ms_segundo / 100);
+}
+setInterval(milisegundos,10);
+
+</script>
+</html>
