@@ -27,7 +27,7 @@
 		}
 	</style>
 </head>
-<body>
+<body id="body">
 <p>SEMANA</p>
 <div id="semana"></div>
 <p>DIA</p>
@@ -69,6 +69,17 @@ function milisegundos() {
 	//document.getElementById("segundo").innerHTML = Math.floor(ms_segundo / 100);
 }
 setInterval(milisegundos,10);
+let color=0;
+function cambioColor() {
+            
+	document.getElementById("body").style.backgroundColor = "hsl("+color+", 100%, 50%)";
+	if (color == 359) {
+		color = 0;
+	}else {
+        	color++
+	}
+}
+setInterval(cambioColor, 100);
 
 </script>
 </html>
