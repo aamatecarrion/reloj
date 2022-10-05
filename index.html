@@ -39,6 +39,7 @@
 <!--<p>SEGUNDO</p>
 <div id="segundo"></div>-->
 <script>
+let color=0;
 function milisegundos() {
 	const d = new Date();
 	ms = d.getTime();
@@ -62,24 +63,18 @@ function milisegundos() {
 	porcentajeminuto = ms_minuto / 600;
     document.getElementById("minuto").style.width = porcentajeminuto + "%";
 	document.getElementById("minuto").innerHTML = Math.floor(ms_minuto / 100);
+
+	color = 121 - ((ms_minuto / 60000) * 121); 
+
+	document.getElementById("body").style.backgroundColor = "hsl("+color+", 100%, 50%)";
     
+
     //ms_segundo = ms % 1000;
 	//porcentajesegundo = ms_segundo / 10;
     //document.getElementById("segundo").style.width = porcentajesegundo + "%";
 	//document.getElementById("segundo").innerHTML = Math.floor(ms_segundo / 100);
 }
 setInterval(milisegundos,10);
-let color=0;
-function cambioColor() {
-            
-	document.getElementById("body").style.backgroundColor = "hsl("+color+", 100%, 50%)";
-	if (color == 359) {
-		color = 0;
-	}else {
-        	color++
-	}
-}
-setInterval(cambioColor, 30);
 
 </script>
 </html>
